@@ -13,18 +13,39 @@ Class Domain:
 
 #### :camel::mountain: Environment
 
-#### Installing
-##### Requirements
+## Installing
+#### Requirements
 Anticipating initial development in `2.7`.
 Anticipating utilizing portable `PySide2` or `Qt.py`
 The ever lovely `requests` package is needed.
 If you do not have `requests`, simply open a shell/cmd window and
-```
+```bash
 $ pip install requests
 ```
-Ramayana uses Airtable as a backend and has a nice python wrapper from @gtalarico
+Ramayana uses Airtable as a backend and has a nice python wrapper from @gtalarico.
 https://github.com/gtalarico/airtable-python-wrapper
 You shouldnt have to do install anything for that. 
+## Usage
 ```
 import vayu
 ```
+From here, create a session manager. 
+```
+sm = vayu.SessionManager()
+sm.build_all_sessions()
+```
+Now we have a session manager to collect all of our bases, and it has initialized each table within the base. 
+We are ready to query/push. 
+```python
+sm.base['Avatar2']['Shots'].get_all() #a readable structure for calls. .get_all retrieves a json of the table.
+```
+For the shotgun_api oriented coders, there are similar implementations:
+For retrieving entity json lists:
+```python
+sm.find("Shot", fields=["code", "sequence", "tasks"] , formula="{frame_count}>100"  )
+```
+as well as updating entities. (The following is also how to upload attachments) 
+```python
+sm.update('Shot', id="recTVVSsw2ldkfu2S", fields={"Attachments": [{'url' : "https://i.imgur.com/iVfx5uw.png"}]}, project="Avatar2"
+```
+Tables will also be retrieved and stacked into a full base object that can be indexed against itself with whatever records reference eachother in the base. 
