@@ -15,6 +15,8 @@ Class Domain:
 
 #### Installing
 ##### Requirements
+Anticipating initial development in `2.7`.
+Anticipating utilizing portable `PySide2` or `Qt.py`
 The ever lovely `requests` package is needed.
 If you do not have `requests`, simply open a shell/cmd window and
 ```
@@ -22,7 +24,7 @@ $ pip install requests
 ```
 Ramayana uses Airtable as a backend and has a nice python wrapper from @gtalarico
 https://github.com/gtalarico/airtable-python-wrapper
-You shouldnt have to do 
+You shouldnt have to do install anything for that. 
 ```
 import vayu
 ```
