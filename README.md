@@ -46,6 +46,6 @@ sm.find("Shot", fields=["code", "sequence", "tasks"] , formula="{frame_count}>10
 ```
 as well as updating entities. (The following is also how to upload attachments) 
 ```python
-sm.update('Shot', id="recTVVSsw2ldkfu2S", fields={"Attachments": [{'url' : "https://i.imgur.com/iVfx5uw.png"}]}, project="Avatar2"
+sm.update('Shot', id="recTVVSsw2ldkfu2S", fields={"Attachments": [{'url' : "https://i.imgur.com/iVfx5uw.png"}]}, project="Avatar2" )
 ```
 Tables will also be retrieved and stacked into a full base object that can be indexed against itself with whatever records reference eachother in the base. 
