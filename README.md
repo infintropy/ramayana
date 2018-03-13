@@ -1,4 +1,4 @@
-# ramayana
+# :traffic_light:ramayana
 An object oriented approach to legible production queries.
 Class Domain:
   - Actor (Back-End for user-facing)
@@ -11,14 +11,18 @@ Class Domain:
 - To distribute a low-end-user-cost product for production teams. (reliant on cloud [airtable @$20/mo]).
 - To open a channel of community development to fork into sub-industries.
 
-#### Environment
-:camel:
+#### :camel::mountain: Environment
 
 #### Installing
 ##### Requirements
 The ever lovely `requests` package is needed.
-If you do not have `requests` (default in Python3
-You shouldnt 
+If you do not have `requests`, simply open a shell/cmd window and
+```
+$ pip install requests
+```
+Ramayana uses Airtable as a backend and has a nice python wrapper from @gtalarico
+https://github.com/gtalarico/airtable-python-wrapper
+You shouldnt have to do 
 ```
 import vayu
 ```
